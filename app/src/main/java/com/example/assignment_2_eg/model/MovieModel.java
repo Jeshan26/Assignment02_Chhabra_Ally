@@ -1,6 +1,8 @@
 package com.example.assignment_2_eg.model;
 
 public class MovieModel {
+    
+    // Declare variables to store movie information
 
     private String MovieId;
     private String Title;
@@ -20,6 +22,7 @@ public class MovieModel {
 
     private String Genre;
 
+    //Getters and Setters forthe movie informations
 
     public MovieModel(){
 

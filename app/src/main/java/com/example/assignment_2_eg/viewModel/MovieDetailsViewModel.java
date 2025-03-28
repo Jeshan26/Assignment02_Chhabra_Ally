@@ -1,6 +1,5 @@
 package com.example.assignment_2_eg.viewModel;
 
-import android.text.method.MovementMethod;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
@@ -50,8 +49,9 @@ public class MovieDetailsViewModel extends ViewModel {
                 try {
 //                    converting response string to JSONObject
                     json = new JSONObject(resData);
-                    movie = new MovieModel();
+                    movie = new MovieModel(); //new Model object to keep the movie data
 
+                    // Extracting the movie's data from the JSON response
                     String strTitle = json.getString("Title");
                     String strYear = json.getString("Year");
                     String strGenre = json.getString("Genre");
@@ -62,7 +62,7 @@ public class MovieDetailsViewModel extends ViewModel {
                     String strLanguage = json.getString("Language");
                     String strRated = json.getString("Rated");
 
-
+//                  setting the movies data into the model object
                     movie.setTitle(strTitle);
                     movie.setYear(strYear);
                     movie.setRating(strRating);
@@ -73,13 +73,7 @@ public class MovieDetailsViewModel extends ViewModel {
                     movie.setLanguage(strLanguage);
                     movie.setRated(strRated);
 
-                    movieData.postValue(movie);
-
-
-
-
-
-
+                    movieData.postValue(movie); // for the UI to update with the information
 
                 } catch (JSONException e) {
                     e.printStackTrace();

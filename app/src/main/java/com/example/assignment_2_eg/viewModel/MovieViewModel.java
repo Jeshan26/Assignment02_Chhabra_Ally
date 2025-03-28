@@ -53,18 +53,18 @@ public class MovieViewModel extends ViewModel {
 
                     JSONArray searchArray = json.getJSONArray("Search");
 
-                    List<MovieModel> movies = new ArrayList<>();
+                    List<MovieModel> movies = new ArrayList<>(); //list to hold the movie data
 
                     for (int i = 0; i < searchArray.length(); i++) {
-                        JSONObject movieJson = searchArray.getJSONObject(i);
+                        JSONObject movieJson = searchArray.getJSONObject(i); // Get the movie data from the current JSON
 
-                        MovieModel movie = new MovieModel();
+                        MovieModel movie = new MovieModel(); //a new model and properties
                         movie.setTitle(movieJson.getString("Title"));
                         movie.setYear(movieJson.getString("Year"));
                         movie.setPoster(movieJson.getString("Poster"));
                         movie.setID(movieJson.getString("imdbID"));
 
-                        movies.add(movie);
+                        movies.add(movie); // Add the movie to the list
                     }
 
                     movieData.postValue(movies); // Post data to LiveData
@@ -75,6 +75,8 @@ public class MovieViewModel extends ViewModel {
                 }
             }
         });
+
+        //week09
     }
 
 }

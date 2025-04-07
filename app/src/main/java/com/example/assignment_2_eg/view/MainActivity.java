@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+//import com.example.assignment_2_eg.R;
 import com.example.assignment_2_eg.R;
 import com.example.assignment_2_eg.adapters.MovieAdapter;
 import com.example.assignment_2_eg.databinding.ActivityMainBinding;
@@ -19,6 +20,7 @@ import com.example.assignment_2_eg.model.MovieModel;
 import com.example.assignment_2_eg.viewModel.MovieViewModel;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
@@ -68,6 +70,23 @@ public class MainActivity extends AppCompatActivity implements MovieClickListene
                 viewModel.SearchMovie(movieName); // this will Trigger movie search in the ViewModel
             }
         });
+
+        // Set the listener for item clicks
+        binding.bottomNavigation.setOnItemSelectedListener(item -> {
+            int itemID = item.getItemId();
+            switch (itemID) {
+                case R.id.searchID:
+                    recreate();
+                    break;
+
+                case R.id.favoritesID:
+                    // Start the FavoritesActivity
+                    Intent favoritesIntent = new Intent(MainActivity.this, Favorities.class);
+                    startActivity(favoritesIntent);
+                    break;
+            }
+            return true; // Return true to indicate the item selection was handled
+        });
     }
 
     // Handle movie item click to navigate to movie details
@@ -76,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements MovieClickListene
         //  an Intent to open the MovieDetails activity
         Intent intentObj = new Intent(MainActivity.this, MovieDetails.class);
 
-        // Passing the movie ID to the MovieDetails activity 
+        // Passing the movie ID to the MovieDetails activity
         intentObj.putExtra("movie_id",movieList.get(pos).getID());
 
 

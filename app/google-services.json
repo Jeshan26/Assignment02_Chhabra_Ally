@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "46538980231",
+    "project_id": "mvvm-moviecrud",
+    "storage_bucket": "mvvm-moviecrud.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:46538980231:android:c3a9597535ca8a95997122",
+        "android_client_info": {
+          "package_name": "com.example.assignment_2_eg"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1m9Kqw0aux5PlEpXVxkTtr5abZig4ACY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -38,7 +38,7 @@ public class MovieViewHolder extends RecyclerView.ViewHolder {
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("tag", "onViewHolder Click");
+                Log.d("tag", "CellView Clicked");
                 movieClickListener.onClick(v,getAdapterPosition());  // Call the onClick method of the listener, passing the clicked view and its position
             }
         });

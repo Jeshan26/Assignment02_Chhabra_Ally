@@ -3,6 +3,7 @@ package com.example.assignment_2_eg.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,10 @@ import com.example.assignment_2_eg.model.MovieModel;
 import com.example.assignment_2_eg.utils.ApiClient;
 import com.example.assignment_2_eg.viewModel.MovieDetailsViewModel;
 import com.example.assignment_2_eg.viewModel.MovieViewModel;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,6 +34,7 @@ public class MovieDetails extends AppCompatActivity {
 
     ActivityMovieDetailsBinding binding; // View binding to access UI elements easily
     MovieDetailsViewModel movieDetailsViewModel; // ViewModel to manage movie details data
+
 
 
     @Override
@@ -61,6 +67,11 @@ public class MovieDetails extends AppCompatActivity {
 
         });
 
+//        observer for the toast msg
+        movieDetailsViewModel.getToastMessage().observe(this,toastMessage -> {
+            Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show();
+        });
+
         // Getting movie ID from the previous screen (passed through Intent)
         Intent intentObj = getIntent(); 
         String movie_id = intentObj.getStringExtra("movie_id");
@@ -69,6 +80,14 @@ public class MovieDetails extends AppCompatActivity {
         if (movie_id != null) {
             movieDetailsViewModel.getMovieDetails(movie_id);
         }
+
+//        Adding the movie to the fav database on btn click
+        binding.addToFavorites.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                movieDetailsViewModel.saveDataToDb();
+            }
+        });
 
         // Setting click listener for the back button to close the activity
         binding.backbtn.setOnClickListener(new View.OnClickListener() {
@@ -79,4 +98,6 @@ public class MovieDetails extends AppCompatActivity {
         });
 
     }
+
+
 }

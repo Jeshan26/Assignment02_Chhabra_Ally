@@ -94,7 +94,7 @@
                 android:textColor="#ADD8E6" />
         </LinearLayout>
 
-        <TextView
+        <EditText
             android:id="@+id/movieplot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -111,15 +111,6 @@
             android:text="Language"
             android:textColor="#ADD8E6" />
 
-        <TextView
-            android:id="@+id/movieratingsTV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Ratings"
-            android:textColor="#FFFF00"
-            android:textSize="20dp"
-            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -127,25 +118,32 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/backbtn"
+                android:id="@+id/updateBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="43dp"
                 android:layout_marginTop="20dp"
-                android:text="Back" />
+                android:text="Update" />
 
-<!--            This will work as a spacer -->
+            <!--            This will work as a spacer -->
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_weight="1" />
 
             <Button
-                android:id="@+id/addToFavorites"
+                android:id="@+id/deleteBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="43dp"
                 android:layout_marginTop="20dp"
-                android:text="Add to Fav" />
+                android:text="Delete" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_marginTop="20dp"
+            android:text="Back" />
     </LinearLayout>
 </LinearLayout>
 

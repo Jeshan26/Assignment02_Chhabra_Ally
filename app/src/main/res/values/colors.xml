@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorActive">#FFFFFF</color>  <!-- Active item color (white for text) -->
+    <color name="colorInactive">#B0B0B0</color>  <!-- Inactive item color (light gray for text) -->
+    <color name="your_background_color">#424242</color>  <!-- Set the desired background color -->
+
 </resources>

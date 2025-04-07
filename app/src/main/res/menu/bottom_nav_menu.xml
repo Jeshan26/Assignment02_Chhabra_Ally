@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Search Menu Item -->
+    <item
+        android:title="Search"
+        android:id="@+id/searchID"
+        android:titleTextAppearance="@style/BottomNavTextStyle"/>
+         />
+
+    <!-- Favorites Menu Item -->
+    <item
+        android:title="Favorites"
+        android:id="@+id/favoritesID"
+        android:titleTextAppearance="@style/BottomNavTextStyle"/>
+         />
+
+
+</menu>

@@ -5,7 +5,7 @@
     android:background="#2F2F2F"
     android:orientation="vertical">
 
-
+<!--Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -15,6 +15,7 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
 
+<!--    Favorite detail -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

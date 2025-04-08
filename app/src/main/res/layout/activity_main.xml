@@ -9,14 +9,13 @@
     android:background="#2F2F2F"
     tools:context=".view.MainActivity">
 
-    <!-- Toolbar -->
 
-    <!-- Movie Section -->
+    <!-- Toolbar -->
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="?attr/actionBarSize"
         android:layout_marginTop="4dp"
         android:background="?attr/colorPrimary"
         android:backgroundTint="#424242"
@@ -27,6 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+<!--    Movie section -->
     <LinearLayout
         android:id="@+id/movieLL"
         android:layout_width="0dp"

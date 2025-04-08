@@ -2,18 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#2F2F2F"
     tools:context=".view.Login">
 
-    <!-- Toolbar -->
+    <!-- Toolbar section -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="40dp"
         android:background="#424242"
         app:titleTextColor="@android:color/white" />
 
@@ -32,7 +32,7 @@
             android:layout_height="90dp"
             android:layout_gravity="center"
             android:layout_marginBottom="30dp"
-            app:srcCompat="@drawable/image" />
+            android:src="@drawable/image" />
 
         <TextView
             android:id="@+id/loginTV"
